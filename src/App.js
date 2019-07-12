@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CounterApp from './components/counterApp'
 
 function App() {
   return (
     <div className="App">
-      <p>Hello world</p>
+      <CounterApp/>
     </div>
   );
 }
