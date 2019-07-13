@@ -2,14 +2,15 @@ import React, {Component} from 'react'
 
 class CounterApp extends Component{
     state = {
-        counter: 0
+        counter: 0,
+        error: ''
     }
 
     decrementCounter = ()=>{
         const {counter} = this.state
         counter > 0 
         ? this.setState({counter: counter - 1})
-        : null
+        : this.setState({error: 'Error - counter cannot go below zero'})
     }
 
     render(){
@@ -33,6 +34,10 @@ class CounterApp extends Component{
                 >
                     Decrement Counter
                 </button>
+
+                <p style={{color: 'red'}} data-test='error-display'>
+                    {this.state.error}
+                </p>
             </section>
             </div>
         )

@@ -94,3 +94,16 @@ test('State should not go below zero', () => {
     expect(counterDisplay.text()).toContain(0)
     
 });
+
+test('Error message to display if try to decrement and counter state is 0', () => {
+    const counter = 0
+    const wrapper = setup(null, {counter})
+    const decremenButton = findByTestAttr(wrapper, 'decrement-button')
+
+    decremenButton.simulate('click')
+    wrapper.update()
+
+    const errorDisplay = findByTestAttr(wrapper, 'error-display')
+    expect(errorDisplay.text()).toContain('Error')
+
+});
