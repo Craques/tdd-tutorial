@@ -18,6 +18,13 @@ class CounterApp extends Component{
                 >
                 Update Counter
                 </button>
+
+                <button
+                    onClick={()=>this.setState({counter: this.state.counter - 1})}
+                    data-test='decrement-button'
+                >
+                    Decrement Counter
+                </button>
             </section>
             </div>
         )
