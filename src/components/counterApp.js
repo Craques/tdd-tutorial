@@ -4,6 +4,14 @@ class CounterApp extends Component{
     state = {
         counter: 0
     }
+
+    decrementCounter = ()=>{
+        const {counter} = this.state
+        counter > 0 
+        ? this.setState({counter: counter - 1})
+        : null
+    }
+
     render(){
         return(
             <div data-test="counter-component"> 
@@ -20,7 +28,7 @@ class CounterApp extends Component{
                 </button>
 
                 <button
-                    onClick={()=>this.setState({counter: this.state.counter - 1})}
+                    onClick={this.decrementCounter}
                     data-test='decrement-button'
                 >
                     Decrement Counter
